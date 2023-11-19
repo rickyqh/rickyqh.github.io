@@ -71,7 +71,6 @@ const GitProfile = ({ config }) => {
         )
         .catch((error) => {
           console.error('Error fetching Scratch Projects:', error);
-          return { data: [] };
         });
     }
 
@@ -92,7 +91,11 @@ const GitProfile = ({ config }) => {
           setProfile(profileData);
 
           // Handle Scratch projects data
-          if (scratchResponse.data.length > 0) {
+        
+          if (
+            scratchResponse.data.length > 0 &&
+            scratchResponse.data.response != 'Too many requests'
+          ) {
             const sortedProjectsLimit = scratchResponse.data
               .sort((a, b) => {
                 // Parse the history.modified timestamps as Date objects
