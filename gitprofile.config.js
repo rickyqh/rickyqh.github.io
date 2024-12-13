@@ -65,7 +65,7 @@ const config = {
   certifications: [
     {
       name: 'Introduction to Python with The Young Maker',
-      body: 'Learning python basics with the young maker',
+      body: 'Learning python basics with The Young Maker',
       year: 'Nov 2024',
       link: 'https://example.com',
     }
